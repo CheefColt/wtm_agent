@@ -27,7 +27,10 @@ python scripts/chat.py lakshmi --paste "You have received a request to RECEIVE R
 python scripts/live_check.py 1 6 7   # trap twins against real Gemini
 ```
 
-## Deploy (Render, free)
+## Deploy
+**Vercel:** import this repo at vercel.com/new and add the `GEMINI_API_KEY` environment variable. `vercel.json` and `api/index.py` do the rest. Sessions travel as a signed blob, so serverless instances need no shared memory.
+
+**Render (alternative, free):**
 1. On render.com, sign in with GitHub, then tap New → Blueprint and pick this repo. `render.yaml` sets everything up.
 2. Paste your Gemini key into the `GEMINI_API_KEY` field.
 

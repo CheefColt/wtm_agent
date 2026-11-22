@@ -3,6 +3,13 @@
 Update this with every commit: rewrite **Now**, add one line to the top of **Log**.
 
 ## Now
+- **Vercel deploy (user's choice over Render):**
+  - Config: `vercel.json` plus `api/index.py`.
+  - Sessions are now stateless: `Session.to_state()` / `from_state()` send a signed, zlib-compressed blob back and forth as `session_id`.
+  - The signing secret comes from `SESSION_SECRET`, or is derived from `GEMINI_API_KEY`.
+  - Caveat: replaying an old blob could re-approve a card in that user's own mock ledger. Acceptable for the demo.
+  - Visitor rate limits are per instance on Vercel.
+  - The user deploys from their phone: vercel.com/new, import the repo, set `GEMINI_API_KEY`.
 - **Deploy ready:** `render.yaml` (free web service, uvicorn on `$PORT`, needs `GEMINI_API_KEY` set in Render).
   - Per-visitor chat limit is 10/min, plus a 100/day total cap, in `server.py`.
   - The user deploys from their phone via Render → New → Blueprint.
@@ -38,6 +45,7 @@ Update this with every commit: rewrite **Now**, add one line to the top of **Log
 - **Working branch:** `ccr-c57dee27-oogryd`.
 
 ## Log (newest first)
+- 22 Nov · Vercel config + signed stateless sessions; UI flow re-verified.
 - 22 Nov · Render blueprint + visitor rate limits; pinned requirements.
 - 22 Nov · Web UI + FastAPI server; demo flow verified by screenshot.
 - 22 Nov · Agent loop + README for submission. Next: tests, then UI.

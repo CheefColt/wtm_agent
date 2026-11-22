@@ -1,10 +1,9 @@
 """Pay Check web app.  Run:  uvicorn server:app --port 8000"""
 
 import os
-import secrets
 import threading
 import time
-from collections import OrderedDict, defaultdict, deque
+from collections import defaultdict, deque
 from pathlib import Path
 
 from fastapi import FastAPI, Request
@@ -15,8 +14,6 @@ from paycheck import agent, config
 from paycheck.store import Session, list_personas, load_persona
 
 app = FastAPI(title="Pay Check")
-SESSIONS: "OrderedDict[str, Session]" = OrderedDict()
-MAX_SESSIONS = 300
 INDEX = Path(__file__).parent / "static" / "index.html"
 
 # Visitor limits, so a public link can't burn the Gemini quota (about 4 model calls per chat).
@@ -57,11 +54,9 @@ async def no_stack_traces(request: Request, exc: Exception):
     return JSONResponse({"error": "Something went wrong. Nothing was paid."}, status_code=500)
 
 
-def _get(sid: str) -> Session | None:
-    s = SESSIONS.get(sid)
-    if s:
-        SESSIONS.move_to_end(sid)
-    return s
+def _get(state: str) -> Session | None:
+    """Sessions travel as signed blobs (no server memory), so this works on serverless hosts."""
+    return Session.from_state(state)
 
 
 def _missing():
@@ -101,11 +96,8 @@ def new_session(body: NewSession):
         load_persona(body.persona)
     except KeyError:
         return JSONResponse({"error": "Unknown persona."}, status_code=404)
-    sid = secrets.token_urlsafe(12)
-    SESSIONS[sid] = Session(body.persona)
-    while len(SESSIONS) > MAX_SESSIONS:
-        SESSIONS.popitem(last=False)
-    return {"session_id": sid, "account": _account(SESSIONS[sid])}
+    s = Session(body.persona)
+    return {"session_id": s.to_state(), "account": _account(s)}
 
 
 class Chat(BaseModel):
@@ -124,7 +116,7 @@ def chat(body: Chat, request: Request):
     if limited:
         return limited
     r = agent.handle(s, body.text, mode="paste" if body.mode == "paste" else "chat", quick_reply=body.quick_reply)
-    return {**r, "account": _account(s)}
+    return {**r, "account": _account(s), "session_id": s.to_state()}
 
 
 class Approve(BaseModel):
@@ -141,7 +133,7 @@ def approve(body: Approve):
     if not s:
         return _missing()
     r = agent.approve(s, body.card_id, body.token, body.payee_upi, body.amount_paise)
-    return {**r, "account": _account(s)}
+    return {**r, "account": _account(s), "session_id": s.to_state()}
 
 
 class Cancel(BaseModel):
@@ -154,4 +146,5 @@ def cancel(body: Cancel):
     s = _get(body.session_id)
     if not s:
         return _missing()
-    return {**agent.cancel(s, body.card_id), "account": _account(s)}
+    r = agent.cancel(s, body.card_id)
+    return {**r, "account": _account(s), "session_id": s.to_state()}
