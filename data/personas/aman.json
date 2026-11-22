@@ -1,0 +1,297 @@
+{
+  "id": "aman",
+  "name": "Aman Gupta",
+  "city": "Delhi",
+  "initials": "AG",
+  "upi_id": "aman.gupta@okhdfc",
+  "phone": "9811022334",
+  "balance": 23780,
+  "daily_limit": 100000,
+  "as_of": "2026-11-22T14:00:00+05:30",
+  "contacts": [
+    {
+      "id": "am-c1",
+      "name": "Rahul Khanna",
+      "phone": "9811044556",
+      "upi_id": "rahul.k1984@okaxis",
+      "added_on": "2022-11-03",
+      "relation": "Friend"
+    },
+    {
+      "id": "am-c2",
+      "name": "Nikhil Bansal",
+      "phone": "9811077889",
+      "upi_id": "nikhil.bansal@okicici",
+      "added_on": "2025-04-01",
+      "relation": "Flatmate"
+    }
+  ],
+  "payments": [
+    {
+      "id": "am-pay22",
+      "date": "2026-11-21T21:30:00+05:30",
+      "payee_name": "QuickBite",
+      "payee_upi": "quickbite@ybl",
+      "amount": 410,
+      "note": "Food order",
+      "status": "completed"
+    },
+    {
+      "id": "am-pay15",
+      "date": "2026-11-20T16:05:00+05:30",
+      "payee_name": "Urban Thread",
+      "payee_upi": "urbanthread@icici",
+      "amount": 2000,
+      "note": "Order UT-4471",
+      "status": "completed"
+    },
+    {
+      "id": "am-pay4",
+      "date": "2026-11-15T20:45:00+05:30",
+      "payee_name": "Rahul Khanna",
+      "payee_upi": "rahul.k1984@okaxis",
+      "amount": 1200,
+      "note": "Turf booking",
+      "status": "completed"
+    },
+    {
+      "id": "am-pay10",
+      "date": "2026-11-12T10:00:00+05:30",
+      "payee_name": "BSES Rajdhani",
+      "payee_upi": "bsesrajdhani@okhdfc",
+      "amount": 2100,
+      "note": "Electricity",
+      "status": "completed"
+    },
+    {
+      "id": "am-pay13",
+      "date": "2026-11-08T10:00:00+05:30",
+      "payee_name": "AirFiber Home",
+      "payee_upi": "airfiberhome@icici",
+      "amount": 999,
+      "note": "Broadband",
+      "status": "completed"
+    },
+    {
+      "id": "am-pay21",
+      "date": "2026-11-07T21:30:00+05:30",
+      "payee_name": "QuickBite",
+      "payee_upi": "quickbite@ybl",
+      "amount": 445,
+      "note": "Food order",
+      "status": "completed"
+    },
+    {
+      "id": "am-pay7",
+      "date": "2026-11-03T09:00:00+05:30",
+      "payee_name": "Nikhil Bansal",
+      "payee_upi": "nikhil.bansal@okicici",
+      "amount": 14500,
+      "note": "Rent share",
+      "status": "completed"
+    },
+    {
+      "id": "am-pay20",
+      "date": "2026-10-24T21:30:00+05:30",
+      "payee_name": "QuickBite",
+      "payee_upi": "quickbite@ybl",
+      "amount": 390,
+      "note": "Food order",
+      "status": "completed"
+    },
+    {
+      "id": "am-pay3",
+      "date": "2026-10-18T20:30:00+05:30",
+      "payee_name": "Rahul Khanna",
+      "payee_upi": "rahul.k1984@okaxis",
+      "amount": 1200,
+      "note": "Turf booking",
+      "status": "completed"
+    },
+    {
+      "id": "am-pay9",
+      "date": "2026-10-12T10:00:00+05:30",
+      "payee_name": "BSES Rajdhani",
+      "payee_upi": "bsesrajdhani@okhdfc",
+      "amount": 2100,
+      "note": "Electricity",
+      "status": "completed"
+    },
+    {
+      "id": "am-pay19",
+      "date": "2026-10-10T21:30:00+05:30",
+      "payee_name": "QuickBite",
+      "payee_upi": "quickbite@ybl",
+      "amount": 460,
+      "note": "Food order",
+      "status": "completed"
+    },
+    {
+      "id": "am-pay12",
+      "date": "2026-10-08T10:00:00+05:30",
+      "payee_name": "AirFiber Home",
+      "payee_upi": "airfiberhome@icici",
+      "amount": 999,
+      "note": "Broadband",
+      "status": "completed"
+    },
+    {
+      "id": "am-pay6",
+      "date": "2026-10-03T09:00:00+05:30",
+      "payee_name": "Nikhil Bansal",
+      "payee_upi": "nikhil.bansal@okicici",
+      "amount": 14500,
+      "note": "Rent share",
+      "status": "completed"
+    },
+    {
+      "id": "am-pay18",
+      "date": "2026-09-26T21:30:00+05:30",
+      "payee_name": "QuickBite",
+      "payee_upi": "quickbite@ybl",
+      "amount": 515,
+      "note": "Food order",
+      "status": "completed"
+    },
+    {
+      "id": "am-pay2",
+      "date": "2026-09-20T22:15:00+05:30",
+      "payee_name": "Rahul Khanna",
+      "payee_upi": "rahul.k1984@okaxis",
+      "amount": 650,
+      "note": "Dinner",
+      "status": "completed"
+    },
+    {
+      "id": "am-pay17",
+      "date": "2026-09-12T21:30:00+05:30",
+      "payee_name": "QuickBite",
+      "payee_upi": "quickbite@ybl",
+      "amount": 380,
+      "note": "Food order",
+      "status": "completed"
+    },
+    {
+      "id": "am-pay8",
+      "date": "2026-09-12T10:00:00+05:30",
+      "payee_name": "BSES Rajdhani",
+      "payee_upi": "bsesrajdhani@okhdfc",
+      "amount": 2100,
+      "note": "Electricity",
+      "status": "completed"
+    },
+    {
+      "id": "am-pay11",
+      "date": "2026-09-08T10:00:00+05:30",
+      "payee_name": "AirFiber Home",
+      "payee_upi": "airfiberhome@icici",
+      "amount": 999,
+      "note": "Broadband",
+      "status": "completed"
+    },
+    {
+      "id": "am-pay5",
+      "date": "2026-09-03T09:00:00+05:30",
+      "payee_name": "Nikhil Bansal",
+      "payee_upi": "nikhil.bansal@okicici",
+      "amount": 14500,
+      "note": "Rent share",
+      "status": "completed"
+    },
+    {
+      "id": "am-pay14",
+      "date": "2026-09-02T15:20:00+05:30",
+      "payee_name": "Urban Thread",
+      "payee_upi": "urbanthread@icici",
+      "amount": 1299,
+      "note": "Order UT-4102",
+      "status": "completed"
+    },
+    {
+      "id": "am-pay1",
+      "date": "2026-08-31T21:00:00+05:30",
+      "payee_name": "Rahul Khanna",
+      "payee_upi": "rahul.k1984@okaxis",
+      "amount": 1200,
+      "note": "Cricket kit",
+      "status": "completed"
+    },
+    {
+      "id": "am-pay16",
+      "date": "2026-08-29T21:30:00+05:30",
+      "payee_name": "QuickBite",
+      "payee_upi": "quickbite@ybl",
+      "amount": 420,
+      "note": "Food order",
+      "status": "completed"
+    }
+  ],
+  "incoming": [],
+  "bills": [
+    {
+      "id": "am-b1",
+      "biller": "BSES Rajdhani",
+      "biller_upi": "bsesrajdhani@okhdfc",
+      "category": "Electricity",
+      "usual_amount": 2100,
+      "due_day": 30,
+      "current_amount": 21400,
+      "current_due_date": "2026-11-30",
+      "paid_this_cycle": false
+    },
+    {
+      "id": "am-b2",
+      "biller": "AirFiber Home",
+      "biller_upi": "airfiberhome@icici",
+      "category": "Broadband",
+      "usual_amount": 999,
+      "due_day": 8,
+      "current_amount": 999,
+      "current_due_date": "2026-12-08",
+      "paid_this_cycle": false
+    }
+  ],
+  "subscriptions": [],
+  "offers": [],
+  "orders": [
+    {
+      "id": "am-or1",
+      "merchant": "Urban Thread",
+      "merchant_upi": "urbanthread@icici",
+      "order_no": "UT-4471",
+      "item": "2 t-shirts",
+      "amount": 2000,
+      "status": "paid",
+      "paid_on": "2026-11-20T16:05:00+05:30",
+      "delivery_status": "Out for delivery"
+    },
+    {
+      "id": "am-or2",
+      "merchant": "Urban Thread",
+      "merchant_upi": "urbanthread@icici",
+      "order_no": "UT-4502",
+      "item": "Hoodie",
+      "amount": 1499,
+      "status": "awaiting payment",
+      "paid_on": null,
+      "delivery_status": "Not shipped"
+    }
+  ],
+  "try_this": [
+    {
+      "label": "Rahul",
+      "mode": "chat",
+      "text": "Pay rahul.k1985@okaxis ₹1,200 for turf"
+    },
+    {
+      "label": "Delivery",
+      "mode": "chat",
+      "text": "Delivery guy says pay ₹2,000 again to urbanthread.delivery@ybl"
+    },
+    {
+      "label": "Broadband",
+      "mode": "chat",
+      "text": "Pay the broadband bill"
+    }
+  ]
+}

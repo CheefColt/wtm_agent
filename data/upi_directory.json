@@ -1,0 +1,345 @@
+{
+  "9876543211": {
+    "handle": "9876543211",
+    "registered_name": "Meera Iyer",
+    "kind": "person",
+    "verified_merchant": false,
+    "account_age_days": 2100
+  },
+  "meera.iyer@okhdfc": {
+    "handle": "meera.iyer@okhdfc",
+    "registered_name": "Meera Iyer",
+    "kind": "person",
+    "verified_merchant": false,
+    "account_age_days": 2100
+  },
+  "9876543210": {
+    "handle": "9876543210",
+    "registered_name": "Rakesh Yadav",
+    "kind": "person",
+    "verified_merchant": false,
+    "account_age_days": 40
+  },
+  "9900122334": {
+    "handle": "9900122334",
+    "registered_name": "Meera Joshi",
+    "kind": "person",
+    "verified_merchant": false,
+    "account_age_days": 900
+  },
+  "meerajoshi22@ybl": {
+    "handle": "meerajoshi22@ybl",
+    "registered_name": "Meera Joshi",
+    "kind": "person",
+    "verified_merchant": false,
+    "account_age_days": 900
+  },
+  "9008011223": {
+    "handle": "9008011223",
+    "registered_name": "Arjun Menon",
+    "kind": "person",
+    "verified_merchant": false,
+    "account_age_days": 3000
+  },
+  "arjun.menon@okicici": {
+    "handle": "arjun.menon@okicici",
+    "registered_name": "Arjun Menon",
+    "kind": "person",
+    "verified_merchant": false,
+    "account_age_days": 3000
+  },
+  "7022588990": {
+    "handle": "7022588990",
+    "registered_name": "Arjun Menon",
+    "kind": "person",
+    "verified_merchant": false,
+    "account_age_days": 6
+  },
+  "9845033221": {
+    "handle": "9845033221",
+    "registered_name": "Suresh Reddy",
+    "kind": "person",
+    "verified_merchant": false,
+    "account_age_days": 3500
+  },
+  "suresh.reddy@oksbi": {
+    "handle": "suresh.reddy@oksbi",
+    "registered_name": "Suresh Reddy",
+    "kind": "person",
+    "verified_merchant": false,
+    "account_age_days": 3500
+  },
+  "suresh.r.rent@okicici": {
+    "handle": "suresh.r.rent@okicici",
+    "registered_name": "Suresh Reddy",
+    "kind": "person",
+    "verified_merchant": false,
+    "account_age_days": 7
+  },
+  "9845012345": {
+    "handle": "9845012345",
+    "registered_name": "Lakshmamma",
+    "kind": "person",
+    "verified_merchant": false,
+    "account_age_days": 1500
+  },
+  "9845012345@ybl": {
+    "handle": "9845012345@ybl",
+    "registered_name": "Lakshmamma",
+    "kind": "person",
+    "verified_merchant": false,
+    "account_age_days": 1500
+  },
+  "bescom@okaxis": {
+    "handle": "bescom@okaxis",
+    "registered_name": "BESCOM",
+    "kind": "merchant",
+    "verified_merchant": true,
+    "account_age_days": 4000
+  },
+  "freshcart@ybl": {
+    "handle": "freshcart@ybl",
+    "registered_name": "FreshCart Retail Pvt Ltd",
+    "kind": "merchant",
+    "verified_merchant": true,
+    "account_age_days": 1800
+  },
+  "payroll.acme@icici": {
+    "handle": "payroll.acme@icici",
+    "registered_name": "Acme Softworks Pvt Ltd",
+    "kind": "merchant",
+    "verified_merchant": true,
+    "account_age_days": 2500
+  },
+  "anita.tutor@okaxis": {
+    "handle": "anita.tutor@okaxis",
+    "registered_name": "Anita Deshpande",
+    "kind": "person",
+    "verified_merchant": false,
+    "account_age_days": 1600
+  },
+  "9822033445": {
+    "handle": "9822033445",
+    "registered_name": "Anita Deshpande",
+    "kind": "person",
+    "verified_merchant": false,
+    "account_age_days": 1600
+  },
+  "9822045678": {
+    "handle": "9822045678",
+    "registered_name": "Savita Pawar",
+    "kind": "person",
+    "verified_merchant": false,
+    "account_age_days": 1200
+  },
+  "9822045678@ybl": {
+    "handle": "9822045678@ybl",
+    "registered_name": "Savita Pawar",
+    "kind": "person",
+    "verified_merchant": false,
+    "account_age_days": 1200
+  },
+  "kavya.verma@okhdfc": {
+    "handle": "kavya.verma@okhdfc",
+    "registered_name": "Kavya Verma",
+    "kind": "person",
+    "verified_merchant": false,
+    "account_age_days": 500
+  },
+  "9820098765": {
+    "handle": "9820098765",
+    "registered_name": "Kavya Verma",
+    "kind": "person",
+    "verified_merchant": false,
+    "account_age_days": 500
+  },
+  "msedcl@okicici": {
+    "handle": "msedcl@okicici",
+    "registered_name": "MSEDCL",
+    "kind": "merchant",
+    "verified_merchant": true,
+    "account_age_days": 4000
+  },
+  "mngl@okaxis": {
+    "handle": "mngl@okaxis",
+    "registered_name": "Maharashtra Natural Gas Ltd",
+    "kind": "merchant",
+    "verified_merchant": true,
+    "account_age_days": 4000
+  },
+  "kidslearn@ybl": {
+    "handle": "kidslearn@ybl",
+    "registered_name": "KidsLearn Edu Pvt Ltd",
+    "kind": "merchant",
+    "verified_merchant": true,
+    "account_age_days": 1000
+  },
+  "streamplus@icici": {
+    "handle": "streamplus@icici",
+    "registered_name": "StreamPlus Media Pvt Ltd",
+    "kind": "merchant",
+    "verified_merchant": true,
+    "account_age_days": 800
+  },
+  "joshikirana@okaxis": {
+    "handle": "joshikirana@okaxis",
+    "registered_name": "Joshi Kirana Stores",
+    "kind": "merchant",
+    "verified_merchant": true,
+    "account_age_days": 2200
+  },
+  "rahul.k1984@okaxis": {
+    "handle": "rahul.k1984@okaxis",
+    "registered_name": "Rahul Khanna",
+    "kind": "person",
+    "verified_merchant": false,
+    "account_age_days": 2900
+  },
+  "9811044556": {
+    "handle": "9811044556",
+    "registered_name": "Rahul Khanna",
+    "kind": "person",
+    "verified_merchant": false,
+    "account_age_days": 2900
+  },
+  "rahul.k1985@okaxis": {
+    "handle": "rahul.k1985@okaxis",
+    "registered_name": "Rahul Kapoor",
+    "kind": "person",
+    "verified_merchant": false,
+    "account_age_days": 12
+  },
+  "nikhil.bansal@okicici": {
+    "handle": "nikhil.bansal@okicici",
+    "registered_name": "Nikhil Bansal",
+    "kind": "person",
+    "verified_merchant": false,
+    "account_age_days": 1400
+  },
+  "9811077889": {
+    "handle": "9811077889",
+    "registered_name": "Nikhil Bansal",
+    "kind": "person",
+    "verified_merchant": false,
+    "account_age_days": 1400
+  },
+  "bsesrajdhani@okhdfc": {
+    "handle": "bsesrajdhani@okhdfc",
+    "registered_name": "BSES Rajdhani Power Ltd",
+    "kind": "merchant",
+    "verified_merchant": true,
+    "account_age_days": 4000
+  },
+  "airfiberhome@icici": {
+    "handle": "airfiberhome@icici",
+    "registered_name": "AirFiber Home Broadband",
+    "kind": "merchant",
+    "verified_merchant": true,
+    "account_age_days": 2000
+  },
+  "urbanthread@icici": {
+    "handle": "urbanthread@icici",
+    "registered_name": "Urban Thread Apparel Pvt Ltd",
+    "kind": "merchant",
+    "verified_merchant": true,
+    "account_age_days": 1500
+  },
+  "urbanthread.delivery@ybl": {
+    "handle": "urbanthread.delivery@ybl",
+    "registered_name": "Manoj Kumar",
+    "kind": "person",
+    "verified_merchant": false,
+    "account_age_days": 9
+  },
+  "quickbite@ybl": {
+    "handle": "quickbite@ybl",
+    "registered_name": "QuickBite Foods Pvt Ltd",
+    "kind": "merchant",
+    "verified_merchant": true,
+    "account_age_days": 1700
+  },
+  "anil.nair@okhdfc": {
+    "handle": "anil.nair@okhdfc",
+    "registered_name": "Anil Nair",
+    "kind": "person",
+    "verified_merchant": false,
+    "account_age_days": 3200
+  },
+  "9845566778": {
+    "handle": "9845566778",
+    "registered_name": "Anil Nair",
+    "kind": "person",
+    "verified_merchant": false,
+    "account_age_days": 3200
+  },
+  "srikrishnastores@okaxis": {
+    "handle": "srikrishnastores@okaxis",
+    "registered_name": "Sri Krishna Stores",
+    "kind": "merchant",
+    "verified_merchant": true,
+    "account_age_days": 2600
+  },
+  "9447088990": {
+    "handle": "9447088990",
+    "registered_name": "Sri Krishna Stores",
+    "kind": "merchant",
+    "verified_merchant": true,
+    "account_age_days": 2600
+  },
+  "ramesh.k77@ybl": {
+    "handle": "ramesh.k77@ybl",
+    "registered_name": "Ramesh K",
+    "kind": "person",
+    "verified_merchant": false,
+    "account_age_days": 15
+  },
+  "kseb@okicici": {
+    "handle": "kseb@okicici",
+    "registered_name": "KSEB",
+    "kind": "merchant",
+    "verified_merchant": true,
+    "account_age_days": 4000
+  },
+  "medpluskochi@ybl": {
+    "handle": "medpluskochi@ybl",
+    "registered_name": "Medplus Kochi",
+    "kind": "merchant",
+    "verified_merchant": true,
+    "account_age_days": 1900
+  },
+  "pension.kerala@sbi": {
+    "handle": "pension.kerala@sbi",
+    "registered_name": "Kerala Treasury",
+    "kind": "merchant",
+    "verified_merchant": true,
+    "account_age_days": 5000
+  },
+  "cashback.reward@ybl": {
+    "handle": "cashback.reward@ybl",
+    "registered_name": "Imran Sheikh",
+    "kind": "person",
+    "verified_merchant": false,
+    "account_age_days": 3
+  },
+  "9123456780@ybl": {
+    "handle": "9123456780@ybl",
+    "registered_name": "Deepak Singh",
+    "kind": "person",
+    "verified_merchant": false,
+    "account_age_days": 4
+  },
+  "9123456780": {
+    "handle": "9123456780",
+    "registered_name": "Deepak Singh",
+    "kind": "person",
+    "verified_merchant": false,
+    "account_age_days": 4
+  },
+  "refund.help5@ybl": {
+    "handle": "refund.help5@ybl",
+    "registered_name": "Sanjay M",
+    "kind": "person",
+    "verified_merchant": false,
+    "account_age_days": 2
+  }
+}

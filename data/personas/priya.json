@@ -1,0 +1,317 @@
+{
+  "id": "priya",
+  "name": "Priya Sharma",
+  "city": "Bengaluru",
+  "initials": "PS",
+  "upi_id": "priya.sharma@okaxis",
+  "phone": "9900112233",
+  "balance": 42310,
+  "daily_limit": 100000,
+  "as_of": "2026-11-22T14:00:00+05:30",
+  "contacts": [
+    {
+      "id": "pr-c1",
+      "name": "Meera Iyer",
+      "phone": "9876543211",
+      "upi_id": "meera.iyer@okhdfc",
+      "added_on": "2024-03-10",
+      "relation": "Flatmate"
+    },
+    {
+      "id": "pr-c2",
+      "name": "Meera Joshi",
+      "phone": "9900122334",
+      "upi_id": "meerajoshi22@ybl",
+      "added_on": "2026-11-19",
+      "relation": "Colleague"
+    },
+    {
+      "id": "pr-c3",
+      "name": "Arjun Menon",
+      "phone": "9008011223",
+      "upi_id": "arjun.menon@okicici",
+      "added_on": "2023-06-02",
+      "relation": "Friend"
+    },
+    {
+      "id": "pr-c4",
+      "name": "Suresh Reddy",
+      "phone": "9845033221",
+      "upi_id": "suresh.r.rent@okicici",
+      "added_on": "2024-01-05",
+      "relation": "Landlord",
+      "previous_upi_id": "suresh.reddy@oksbi",
+      "upi_id_changed_on": "2026-11-15",
+      "change_note": "Changed by payee; confirmation SMS logged on 15 Nov"
+    },
+    {
+      "id": "pr-c5",
+      "name": "Lakshmamma",
+      "phone": "9845012345",
+      "upi_id": "9845012345@ybl",
+      "added_on": "2025-02-01",
+      "relation": "Cook"
+    }
+  ],
+  "payments": [
+    {
+      "id": "pr-pay24",
+      "date": "2026-11-20T18:30:00+05:30",
+      "payee_name": "FreshCart",
+      "payee_upi": "freshcart@ybl",
+      "amount": 1290,
+      "note": "Groceries",
+      "status": "completed"
+    },
+    {
+      "id": "pr-pay23",
+      "date": "2026-11-08T18:30:00+05:30",
+      "payee_name": "FreshCart",
+      "payee_upi": "freshcart@ybl",
+      "amount": 1035,
+      "note": "Groceries",
+      "status": "completed"
+    },
+    {
+      "id": "pr-pay3",
+      "date": "2026-11-02T09:30:00+05:30",
+      "payee_name": "Meera Iyer",
+      "payee_upi": "meera.iyer@okhdfc",
+      "amount": 15000,
+      "note": "Flat expenses",
+      "status": "completed"
+    },
+    {
+      "id": "pr-pay12",
+      "date": "2026-11-01T08:20:00+05:30",
+      "payee_name": "Lakshmamma",
+      "payee_upi": "9845012345@ybl",
+      "amount": 6000,
+      "note": "Cook salary",
+      "status": "completed"
+    },
+    {
+      "id": "pr-pay9",
+      "date": "2026-11-01T08:15:00+05:30",
+      "payee_name": "Suresh Reddy",
+      "payee_upi": "suresh.reddy@oksbi",
+      "amount": 28000,
+      "note": "Rent",
+      "status": "completed"
+    },
+    {
+      "id": "pr-pay22",
+      "date": "2026-10-25T18:30:00+05:30",
+      "payee_name": "FreshCart",
+      "payee_upi": "freshcart@ybl",
+      "amount": 1460,
+      "note": "Groceries",
+      "status": "completed"
+    },
+    {
+      "id": "pr-pay15",
+      "date": "2026-10-24T10:00:00+05:30",
+      "payee_name": "BESCOM",
+      "payee_upi": "bescom@okaxis",
+      "amount": 1850,
+      "note": "Electricity",
+      "status": "completed"
+    },
+    {
+      "id": "pr-pay6",
+      "date": "2026-10-19T22:40:00+05:30",
+      "payee_name": "Meera Iyer",
+      "payee_upi": "meera.iyer@okhdfc",
+      "amount": 850,
+      "note": "Movie",
+      "status": "completed"
+    },
+    {
+      "id": "pr-pay17",
+      "date": "2026-10-12T11:30:00+05:30",
+      "payee_name": "Arjun Menon",
+      "payee_upi": "arjun.menon@okicici",
+      "amount": 3200,
+      "note": "Coorg trip share",
+      "status": "completed"
+    },
+    {
+      "id": "pr-pay21",
+      "date": "2026-10-11T18:30:00+05:30",
+      "payee_name": "FreshCart",
+      "payee_upi": "freshcart@ybl",
+      "amount": 1120,
+      "note": "Groceries",
+      "status": "completed"
+    },
+    {
+      "id": "pr-pay2",
+      "date": "2026-10-02T09:30:00+05:30",
+      "payee_name": "Meera Iyer",
+      "payee_upi": "meera.iyer@okhdfc",
+      "amount": 15000,
+      "note": "Flat expenses",
+      "status": "completed"
+    },
+    {
+      "id": "pr-pay11",
+      "date": "2026-10-01T08:20:00+05:30",
+      "payee_name": "Lakshmamma",
+      "payee_upi": "9845012345@ybl",
+      "amount": 6000,
+      "note": "Cook salary",
+      "status": "completed"
+    },
+    {
+      "id": "pr-pay8",
+      "date": "2026-10-01T08:15:00+05:30",
+      "payee_name": "Suresh Reddy",
+      "payee_upi": "suresh.reddy@oksbi",
+      "amount": 28000,
+      "note": "Rent",
+      "status": "completed"
+    },
+    {
+      "id": "pr-pay20",
+      "date": "2026-09-27T18:30:00+05:30",
+      "payee_name": "FreshCart",
+      "payee_upi": "freshcart@ybl",
+      "amount": 1510,
+      "note": "Groceries",
+      "status": "completed"
+    },
+    {
+      "id": "pr-pay14",
+      "date": "2026-09-24T10:00:00+05:30",
+      "payee_name": "BESCOM",
+      "payee_upi": "bescom@okaxis",
+      "amount": 1850,
+      "note": "Electricity",
+      "status": "completed"
+    },
+    {
+      "id": "pr-pay5",
+      "date": "2026-09-14T21:05:00+05:30",
+      "payee_name": "Meera Iyer",
+      "payee_upi": "meera.iyer@okhdfc",
+      "amount": 1200,
+      "note": "Dinner",
+      "status": "completed"
+    },
+    {
+      "id": "pr-pay19",
+      "date": "2026-09-13T18:30:00+05:30",
+      "payee_name": "FreshCart",
+      "payee_upi": "freshcart@ybl",
+      "amount": 980,
+      "note": "Groceries",
+      "status": "completed"
+    },
+    {
+      "id": "pr-pay16",
+      "date": "2026-09-07T19:00:00+05:30",
+      "payee_name": "Arjun Menon",
+      "payee_upi": "arjun.menon@okicici",
+      "amount": 450,
+      "note": "Movie tickets",
+      "status": "completed"
+    },
+    {
+      "id": "pr-pay1",
+      "date": "2026-09-02T09:30:00+05:30",
+      "payee_name": "Meera Iyer",
+      "payee_upi": "meera.iyer@okhdfc",
+      "amount": 15000,
+      "note": "Flat expenses",
+      "status": "completed"
+    },
+    {
+      "id": "pr-pay10",
+      "date": "2026-09-01T08:20:00+05:30",
+      "payee_name": "Lakshmamma",
+      "payee_upi": "9845012345@ybl",
+      "amount": 6000,
+      "note": "Cook salary",
+      "status": "completed"
+    },
+    {
+      "id": "pr-pay7",
+      "date": "2026-09-01T08:15:00+05:30",
+      "payee_name": "Suresh Reddy",
+      "payee_upi": "suresh.reddy@oksbi",
+      "amount": 28000,
+      "note": "Rent",
+      "status": "completed"
+    },
+    {
+      "id": "pr-pay18",
+      "date": "2026-08-30T18:30:00+05:30",
+      "payee_name": "FreshCart",
+      "payee_upi": "freshcart@ybl",
+      "amount": 1340,
+      "note": "Groceries",
+      "status": "completed"
+    },
+    {
+      "id": "pr-pay4",
+      "date": "2026-08-28T20:10:00+05:30",
+      "payee_name": "Meera Iyer",
+      "payee_upi": "meera.iyer@okhdfc",
+      "amount": 2400,
+      "note": "Groceries split",
+      "status": "completed"
+    },
+    {
+      "id": "pr-pay13",
+      "date": "2026-08-24T10:00:00+05:30",
+      "payee_name": "BESCOM",
+      "payee_upi": "bescom@okaxis",
+      "amount": 1850,
+      "note": "Electricity",
+      "status": "completed"
+    }
+  ],
+  "incoming": [
+    {
+      "id": "pr-in1",
+      "date": "2026-10-31T18:00:00+05:30",
+      "from_name": "Acme Softworks Pvt Ltd",
+      "from_upi": "payroll.acme@icici",
+      "amount": 92000,
+      "note": "Salary Oct"
+    }
+  ],
+  "bills": [
+    {
+      "id": "pr-b1",
+      "biller": "BESCOM",
+      "biller_upi": "bescom@okaxis",
+      "category": "Electricity",
+      "usual_amount": 1850,
+      "due_day": 28,
+      "current_amount": 1920,
+      "current_due_date": "2026-11-28",
+      "paid_this_cycle": false
+    }
+  ],
+  "subscriptions": [],
+  "offers": [],
+  "orders": [],
+  "try_this": [
+    {
+      "label": "Meera, new number",
+      "mode": "chat",
+      "text": "Send Meera ₹15,000 on her new number 98765-43210"
+    },
+    {
+      "label": "Rent",
+      "mode": "chat",
+      "text": "Pay rent to my landlord, same as last time"
+    },
+    {
+      "label": "Cook",
+      "mode": "chat",
+      "text": "Pay Lakshmamma ₹6,000, same as last month"
+    }
+  ]
+}

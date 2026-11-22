@@ -1,0 +1,286 @@
+{
+  "id": "lakshmi",
+  "name": "Lakshmi Nair",
+  "city": "Kochi",
+  "initials": "LN",
+  "upi_id": "lakshmi.nair@oksbi",
+  "phone": "9447011223",
+  "balance": 112640,
+  "daily_limit": 100000,
+  "as_of": "2026-11-22T14:00:00+05:30",
+  "contacts": [
+    {
+      "id": "la-c1",
+      "name": "Anil Nair",
+      "phone": "9845566778",
+      "upi_id": "anil.nair@okhdfc",
+      "added_on": "2021-05-10",
+      "relation": "Son"
+    },
+    {
+      "id": "la-c2",
+      "name": "Sri Krishna Stores",
+      "phone": "9447088990",
+      "upi_id": "srikrishnastores@okaxis",
+      "added_on": "2023-01-15",
+      "relation": "Grocery shop"
+    }
+  ],
+  "payments": [
+    {
+      "id": "la-pay13",
+      "date": "2026-11-17T10:30:00+05:30",
+      "payee_name": "Sri Krishna Stores",
+      "payee_upi": "srikrishnastores@okaxis",
+      "amount": 1275,
+      "note": "Groceries",
+      "status": "completed"
+    },
+    {
+      "id": "la-pay16",
+      "date": "2026-11-15T10:00:00+05:30",
+      "payee_name": "KSEB",
+      "payee_upi": "kseb@okicici",
+      "amount": 1150,
+      "note": "Electricity",
+      "status": "completed"
+    },
+    {
+      "id": "la-pay12",
+      "date": "2026-11-10T10:30:00+05:30",
+      "payee_name": "Sri Krishna Stores",
+      "payee_upi": "srikrishnastores@okaxis",
+      "amount": 1110,
+      "note": "Groceries",
+      "status": "completed"
+    },
+    {
+      "id": "la-pay19",
+      "date": "2026-11-04T11:15:00+05:30",
+      "payee_name": "Medplus Kochi",
+      "payee_upi": "medpluskochi@ybl",
+      "amount": 2380,
+      "note": "Monthly medicines",
+      "status": "completed"
+    },
+    {
+      "id": "la-pay11",
+      "date": "2026-11-03T10:30:00+05:30",
+      "payee_name": "Sri Krishna Stores",
+      "payee_upi": "srikrishnastores@okaxis",
+      "amount": 1340,
+      "note": "Groceries",
+      "status": "completed"
+    },
+    {
+      "id": "la-pay10",
+      "date": "2026-10-27T10:30:00+05:30",
+      "payee_name": "Sri Krishna Stores",
+      "payee_upi": "srikrishnastores@okaxis",
+      "amount": 970,
+      "note": "Groceries",
+      "status": "completed"
+    },
+    {
+      "id": "la-pay9",
+      "date": "2026-10-20T10:30:00+05:30",
+      "payee_name": "Sri Krishna Stores",
+      "payee_upi": "srikrishnastores@okaxis",
+      "amount": 1560,
+      "note": "Groceries",
+      "status": "completed"
+    },
+    {
+      "id": "la-pay15",
+      "date": "2026-10-15T10:00:00+05:30",
+      "payee_name": "KSEB",
+      "payee_upi": "kseb@okicici",
+      "amount": 1150,
+      "note": "Electricity",
+      "status": "completed"
+    },
+    {
+      "id": "la-pay8",
+      "date": "2026-10-13T10:30:00+05:30",
+      "payee_name": "Sri Krishna Stores",
+      "payee_upi": "srikrishnastores@okaxis",
+      "amount": 890,
+      "note": "Groceries",
+      "status": "completed"
+    },
+    {
+      "id": "la-pay7",
+      "date": "2026-10-06T10:30:00+05:30",
+      "payee_name": "Sri Krishna Stores",
+      "payee_upi": "srikrishnastores@okaxis",
+      "amount": 1220,
+      "note": "Groceries",
+      "status": "completed"
+    },
+    {
+      "id": "la-pay18",
+      "date": "2026-10-04T11:15:00+05:30",
+      "payee_name": "Medplus Kochi",
+      "payee_upi": "medpluskochi@ybl",
+      "amount": 2380,
+      "note": "Monthly medicines",
+      "status": "completed"
+    },
+    {
+      "id": "la-pay20",
+      "date": "2026-10-02T09:00:00+05:30",
+      "payee_name": "Anil Nair",
+      "payee_upi": "anil.nair@okhdfc",
+      "amount": 3000,
+      "note": "Diwali gift for Ammu",
+      "status": "completed"
+    },
+    {
+      "id": "la-pay6",
+      "date": "2026-09-29T10:30:00+05:30",
+      "payee_name": "Sri Krishna Stores",
+      "payee_upi": "srikrishnastores@okaxis",
+      "amount": 1050,
+      "note": "Groceries",
+      "status": "completed"
+    },
+    {
+      "id": "la-pay5",
+      "date": "2026-09-22T10:30:00+05:30",
+      "payee_name": "Sri Krishna Stores",
+      "payee_upi": "srikrishnastores@okaxis",
+      "amount": 1480,
+      "note": "Groceries",
+      "status": "completed"
+    },
+    {
+      "id": "la-pay4",
+      "date": "2026-09-15T10:30:00+05:30",
+      "payee_name": "Sri Krishna Stores",
+      "payee_upi": "srikrishnastores@okaxis",
+      "amount": 760,
+      "note": "Groceries",
+      "status": "completed"
+    },
+    {
+      "id": "la-pay14",
+      "date": "2026-09-15T10:00:00+05:30",
+      "payee_name": "KSEB",
+      "payee_upi": "kseb@okicici",
+      "amount": 1150,
+      "note": "Electricity",
+      "status": "completed"
+    },
+    {
+      "id": "la-pay3",
+      "date": "2026-09-08T10:30:00+05:30",
+      "payee_name": "Sri Krishna Stores",
+      "payee_upi": "srikrishnastores@okaxis",
+      "amount": 1310,
+      "note": "Groceries",
+      "status": "completed"
+    },
+    {
+      "id": "la-pay17",
+      "date": "2026-09-04T11:15:00+05:30",
+      "payee_name": "Medplus Kochi",
+      "payee_upi": "medpluskochi@ybl",
+      "amount": 2380,
+      "note": "Monthly medicines",
+      "status": "completed"
+    },
+    {
+      "id": "la-pay2",
+      "date": "2026-09-01T10:30:00+05:30",
+      "payee_name": "Sri Krishna Stores",
+      "payee_upi": "srikrishnastores@okaxis",
+      "amount": 920,
+      "note": "Groceries",
+      "status": "completed"
+    },
+    {
+      "id": "la-pay1",
+      "date": "2026-08-25T10:30:00+05:30",
+      "payee_name": "Sri Krishna Stores",
+      "payee_upi": "srikrishnastores@okaxis",
+      "amount": 1640,
+      "note": "Groceries",
+      "status": "completed"
+    }
+  ],
+  "incoming": [
+    {
+      "id": "la-in1",
+      "date": "2026-11-01T09:00:00+05:30",
+      "from_name": "Kerala Treasury",
+      "from_upi": "pension.kerala@sbi",
+      "amount": 38500,
+      "note": "Pension Nov"
+    },
+    {
+      "id": "la-in2",
+      "date": "2026-11-21T19:20:00+05:30",
+      "from_name": "Anil Nair",
+      "from_upi": "anil.nair@okhdfc",
+      "amount": 4999,
+      "note": "For the new phone"
+    },
+    {
+      "id": "la-in3",
+      "date": "2026-11-22T13:10:00+05:30",
+      "from_name": "Anil Nair",
+      "from_upi": "anil.nair@okhdfc",
+      "amount": 2000,
+      "note": "Groceries"
+    },
+    {
+      "id": "la-in4",
+      "date": "2026-11-22T13:11:00+05:30",
+      "from_name": "Anil Nair",
+      "from_upi": "anil.nair@okhdfc",
+      "amount": 2000,
+      "note": "Groceries"
+    },
+    {
+      "id": "la-in5",
+      "date": "2026-11-22T13:40:00+05:30",
+      "from_name": "Deepak Singh",
+      "from_upi": "9123456780@ybl",
+      "amount": 5000,
+      "note": ""
+    }
+  ],
+  "bills": [
+    {
+      "id": "la-b1",
+      "biller": "KSEB",
+      "biller_upi": "kseb@okicici",
+      "category": "Electricity",
+      "usual_amount": 1150,
+      "due_day": 20,
+      "current_amount": 1150,
+      "current_due_date": "2026-12-20",
+      "paid_this_cycle": true
+    }
+  ],
+  "subscriptions": [],
+  "offers": [],
+  "orders": [],
+  "try_this": [
+    {
+      "label": "Scam SMS",
+      "mode": "paste",
+      "text": "You have received a request to RECEIVE Rs 4,999 from cashback.reward@ybl. Enter your UPI PIN to get the money in your account."
+    },
+    {
+      "label": "Refund ask",
+      "mode": "paste",
+      "text": "Madam I sent you Rs 5000 by mistake, please return urgently to refund.help5@ybl. Very urgent, my child is in hospital."
+    },
+    {
+      "label": "Shop QR",
+      "mode": "paste",
+      "text": "upi://pay?pa=srikrishnastores@okaxis&pn=Sri%20Krishna%20Stores&am=1200"
+    }
+  ]
+}
