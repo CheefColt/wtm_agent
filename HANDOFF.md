@@ -45,6 +45,7 @@ Update this with every commit: rewrite **Now**, add one line to the top of **Log
 - **Working branch:** `ccr-c57dee27-oogryd`.
 
 ## Log (newest first)
+- 22 Nov · Vercel showed {"detail":"Not Found"}; switched vercel.json to classic builds+routes and made api/index.py map /api/index paths back. Not yet confirmed live (this env cannot reach vercel.app).
 - 22 Nov · Vercel config + signed stateless sessions; UI flow re-verified.
 - 22 Nov · Render blueprint + visitor rate limits; pinned requirements.
 - 22 Nov · Web UI + FastAPI server; demo flow verified by screenshot.
