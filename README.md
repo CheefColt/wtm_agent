@@ -21,14 +21,15 @@ It looks before it pays: it checks each request against the account's records an
 ```
 pip install -r requirements.txt
 export GEMINI_API_KEY=...
+uvicorn server:app --port 8000        # web app at http://localhost:8000
 python scripts/chat.py priya "Send Meera ₹15,000"
 python scripts/chat.py lakshmi --paste "You have received a request to RECEIVE Rs 4,999 from cashback.reward@ybl. Enter your UPI PIN."
 python scripts/live_check.py 1 6 7   # trap twins against real Gemini
 ```
 
 ## Status
-Done: data, tools, the safety gate and the agent loop.
-Not done yet: the web UI and the attack test suite. See `HANDOFF.md`.
+Done: data, tools, the safety gate, the agent loop and the web UI.
+Not done yet: the attack test suite. See `HANDOFF.md`.
 
 ## Credit
 The approach comes from our research project What They Meant (github.com/nsharan2000/what-they-meant). This build's code and data are new.

@@ -22,7 +22,8 @@ def load_persona(pid: str) -> dict:
 
 def list_personas() -> list[dict]:
     out = []
-    for f in sorted((DATA / "personas").glob("*.json")):
+    order = ["priya", "sunita", "aman", "lakshmi"]
+    for f in sorted((DATA / "personas").glob("*.json"), key=lambda f: (order.index(f.stem) if f.stem in order else 99, f.stem)):
         p = json.loads(f.read_text())
         out.append({k: p[k] for k in ("id", "name", "city", "initials")})
     return out

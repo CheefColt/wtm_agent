@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pay Check</title>
+<style>
+:root{--bg:#eef1f5;--card:#fff;--ink:#16202c;--muted:#6b7684;--line:#e3e7ec;--accent:#0F4C81;--accent-soft:#e6eef7;
+--green:#1a7f37;--green-soft:#e8f5ec;--amber:#b7791f;--amber-soft:#fff6e5;--red:#c62828;--red-soft:#fdecec}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%}
+body{background:var(--bg);color:var(--ink);font:14px/1.4 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.num{font-variant-numeric:tabular-nums}
+button{font:inherit;cursor:pointer}
+/* top bar */
+.top{display:flex;align-items:center;gap:16px;padding:10px 24px;background:var(--card);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5}
+.brand{font-weight:700;font-size:18px;color:var(--accent);white-space:nowrap}
+.brand span{color:var(--ink)}
+.pills{flex:1;display:flex;justify-content:center;gap:8px;flex-wrap:wrap}
+.pill{display:flex;align-items:center;gap:8px;border:1px solid var(--line);background:var(--card);border-radius:999px;padding:4px 12px 4px 4px;color:var(--ink)}
+.pill.on{border-color:var(--accent);background:var(--accent-soft)}
+.av{width:28px;height:28px;border-radius:50%;background:var(--accent);color:#fff;display:grid;place-items:center;font-size:11px;font-weight:700;flex:none}
+.tag{font-size:12px;color:var(--muted);border:1px dashed #b8c0ca;border-radius:6px;padding:3px 8px;white-space:nowrap}
+/* layout */
+.main{display:grid;grid-template-columns:minmax(440px,1fr) 1.25fr;gap:24px;padding:20px 24px;max-width:1440px;margin:0 auto}
+.left{display:flex;justify-content:center;align-items:flex-start}
+.phone{width:400px;height:820px;border:10px solid #1b2430;border-radius:40px;background:#f7f8fa;display:flex;flex-direction:column;overflow:hidden;box-shadow:0 10px 30px rgba(20,30,50,.15);position:sticky;top:76px}
+.ph-head{background:var(--accent);color:#fff;padding:18px 16px 12px;display:flex;align-items:center;gap:10px}
+.ph-head .av{background:#fff;color:var(--accent);width:34px;height:34px}
+.ph-head .who{flex:1;font-weight:600}
+.ph-head .bal{text-align:right;font-size:11px;opacity:.85}
+.ph-head .bal b{display:block;font-size:16px;opacity:1}
+.chat{flex:1;overflow-y:auto;padding:12px;display:flex;flex-direction:column;gap:8px}
+.msg{max-width:85%;padding:8px 11px;border-radius:14px;white-space:pre-wrap;word-wrap:break-word}
+.msg.user{align-self:flex-end;background:#dbeafe;border-bottom-right-radius:4px}
+.msg.user.paste{background:#eef2f7;border:1px dashed #9fb0c4;font-size:12px}
+.msg.agent{align-self:flex-start;background:var(--card);border:1px solid var(--line);border-bottom-left-radius:4px}
+.tools{align-self:flex-start;font-size:11px;color:var(--muted);padding:0 4px;display:flex;flex-direction:column;gap:1px;max-width:95%}
+.thinking{color:var(--muted);font-style:italic}
+.card{align-self:stretch;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px}
+.card.ask{border:2px solid var(--amber);background:var(--amber-soft)}
+.card.stop{border:2px solid var(--red);background:var(--red-soft)}
+.card.paid{border:2px solid var(--green);background:var(--green-soft)}
+.card .label{font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;margin-bottom:6px}
+.ask .label{color:var(--amber)} .stop .label{color:var(--red)} .paid .label{color:var(--green)}
+.payee{display:flex;align-items:center;gap:10px}
+.payee .av{width:38px;height:38px;font-size:13px}
+.payee .upi{color:var(--muted);font-size:12px}
+.amount{font-size:30px;font-weight:700;margin:10px 0 2px}
+.small{font-size:12px;color:var(--muted)}
+.warn{margin-top:8px;font-size:12px;background:var(--amber-soft);border-left:3px solid var(--amber);padding:6px 8px;border-radius:4px}
+.approve{width:100%;margin-top:12px;background:var(--accent);color:#fff;border:0;border-radius:10px;padding:11px;font-weight:600;font-size:15px}
+.approve:disabled{opacity:.5}
+.cancel{display:block;margin:8px auto 0;background:none;border:0;color:var(--muted);text-decoration:underline}
+.qr{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.qr button{border:1px solid var(--amber);background:#fff;border-radius:999px;padding:5px 11px;color:var(--ink)}
+.why{background:none;border:0;color:var(--accent);text-decoration:underline;font-size:12px;padding:0;margin-top:8px}
+.tick{font-size:28px;color:var(--green);line-height:1}
+.void{opacity:.55}
+.composer{border-top:1px solid var(--line);background:var(--card);padding:8px}
+.chips{display:flex;gap:6px;overflow-x:auto;padding-bottom:6px}
+.chips button{flex:none;border:1px solid var(--line);background:#f4f6f9;border-radius:999px;padding:4px 10px;font-size:12px;color:var(--ink)}
+.row{display:flex;gap:6px;align-items:flex-end}
+.clip{border:1px solid var(--line);background:#fff;border-radius:10px;padding:8px;font-size:12px;color:var(--muted);white-space:nowrap}
+.clip.on{border-color:var(--accent);color:var(--accent);background:var(--accent-soft)}
+textarea{flex:1;resize:none;border:1px solid var(--line);border-radius:10px;padding:8px 10px;font:inherit;height:38px;max-height:120px}
+.send{background:var(--accent);color:#fff;border:0;border-radius:10px;padding:9px 14px;font-weight:600}
+/* right panel */
+.right{display:flex;flex-direction:column;gap:14px;min-width:0}
+.sec{background:var(--card);border-radius:12px;border:1px solid var(--line);overflow:hidden}
+.sec h2{margin:0;font-size:13px;padding:10px 14px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between}
+.sec h2 small{font-weight:400;color:var(--muted)}
+.scroll{max-height:300px;overflow-y:auto}
+table{width:100%;border-collapse:collapse;font-size:12.5px}
+th{text-align:left;font-weight:600;color:var(--muted);padding:6px 14px;background:#fafbfc;position:sticky;top:0}
+td{padding:6px 14px;border-top:1px solid var(--line);vertical-align:top}
+td.r,th.r{text-align:right}
+.badge{display:inline-block;font-size:10.5px;font-weight:600;border-radius:4px;padding:1px 6px;margin-left:6px;background:var(--amber-soft);color:var(--amber)}
+.badge.blue{background:var(--accent-soft);color:var(--accent)}
+.badge.green{background:var(--green-soft);color:var(--green)}
+.kv{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;padding:12px 14px}
+.kv div{font-size:12px;color:var(--muted)} .kv b{display:block;font-size:18px;color:var(--ink)}
+tr.hl-ask,div.hl-ask{animation:flashA 2.4s ease-out;background:var(--amber-soft)}
+tr.hl-stop,div.hl-stop{animation:flashR 2.4s ease-out;background:var(--red-soft)}
+tr.hl-pay,div.hl-pay{background:var(--accent-soft)}
+@keyframes flashA{0%,30%{background:#ffd98a}100%{background:var(--amber-soft)}}
+@keyframes flashR{0%,30%{background:#ffb3b3}100%{background:var(--red-soft)}}
+.err{color:var(--red)}
+@media (max-width:980px){
+  .top{flex-wrap:wrap;padding:10px 16px}.pills{order:3;flex-basis:100%;justify-content:flex-start;overflow-x:auto;flex-wrap:nowrap}
+  .main{grid-template-columns:1fr;padding:12px 16px}
+  .phone{width:100%;max-width:420px;height:78vh;min-height:560px;position:static;border-width:6px;border-radius:28px}
+  .kv{grid-template-columns:repeat(2,1fr)}
+}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="brand">Pay<span> Check</span></div>
+  <nav class="pills" id="pills"></nav>
+  <div class="tag">Mock data · no real money</div>
+</header>
+<main class="main">
+  <section class="left">
+    <div class="phone">
+      <div class="ph-head"><div class="av" id="ph-av"></div><div class="who" id="ph-name"></div>
+        <div class="bal">Balance<b class="num" id="ph-bal"></b></div></div>
+      <div class="chat" id="chat"></div>
+      <div class="composer">
+        <div class="chips" id="chips"></div>
+        <div class="row">
+          <button class="clip" id="clip" title="Paste a message to check">📎 Paste</button>
+          <textarea id="input" placeholder="Send Meera ₹500…"></textarea>
+          <button class="send" id="send">Send</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="right" id="right"></section>
+</main>
+<script>
+const $ = s => document.querySelector(s);
+let SID = null, ACC = null, PASTE = false, BUSY = false;
+
+function el(tag, attrs = {}, ...kids) {
+  const e = document.createElement(tag);
+  for (const [k, v] of Object.entries(attrs)) {
+    if (k === "class") e.className = v; else if (k.startsWith("on")) e.addEventListener(k.slice(2), v);
+    else if (v !== null && v !== undefined && v !== false) e.setAttribute(k, v);
+  }
+  for (const k of kids.flat()) if (k !== null && k !== undefined && k !== false) e.append(k instanceof Node ? k : String(k));
+  return e;
+}
+const inr = n => "₹" + Number(n).toLocaleString("en-IN", {maximumFractionDigits: 2});
+const day = iso => iso ? new Date(iso.slice(0, 10) + "T00:00:00").toLocaleDateString("en-IN", {day: "numeric", month: "short"}) : "";
+const initials = name => (name || "?").split(/\s+/).map(w => w[0]).join("").slice(0, 2).toUpperCase();
+
+async function api(path, body) {
+  try {
+    const r = await fetch(path, {method: body ? "POST" : "GET", headers: {"Content-Type": "application/json"},
+      body: body ? JSON.stringify(body) : undefined});
+    const j = await r.json();
+    if (!r.ok) return {error: j.error || "Something went wrong. Nothing was paid."};
+    return j;
+  } catch { return {error: "Can't reach the server. Nothing was paid."}; }
+}
+
+async function loadPersonas() {
+  const list = await api("/api/personas");
+  if (list.error) return;
+  const pills = $("#pills"); pills.replaceChildren();
+  list.forEach(p => pills.append(el("button", {class: "pill", "data-id": p.id, onclick: () => start(p.id)},
+    el("span", {class: "av"}, p.initials), `${p.name} · ${p.city}`)));
+  start(list[0].id);
+}
+
+async function start(pid) {
+  const r = await api("/api/session", {persona: pid});
+  if (r.error) return;
+  SID = r.session_id;
+  document.querySelectorAll(".pill").forEach(b => b.classList.toggle("on", b.dataset.id === pid));
+  $("#chat").replaceChildren(el("div", {class: "msg agent"},
+    "Hi! Tell me who to pay, or tap 📎 to paste a message and I'll tell you what it really does."));
+  setPaste(false);
+  render(r.account);
+}
+
+function render(a) {
+  ACC = a;
+  $("#ph-av").textContent = a.persona.initials;
+  $("#ph-name").textContent = a.persona.name;
+  $("#ph-bal").textContent = inr(a.balance);
+  const chips = $("#chips"); chips.replaceChildren();
+  a.try_this.forEach(t => chips.append(el("button", {onclick: () => { setPaste(t.mode === "paste"); $("#input").value = t.text; $("#input").focus(); }},
+    (t.mode === "paste" ? "📎 " : "") + t.label)));
+  renderPanel(a);
+}
+
+function sec(title, sub, body, scroll) {
+  return el("div", {class: "sec"}, el("h2", {}, title, el("small", {}, sub || "")), scroll ? el("div", {class: "scroll"}, body) : body);
+}
+function table(heads, rows) {
+  return el("table", {}, el("thead", {}, el("tr", {}, heads.map(h => el("th", {class: h.endsWith(" ") ? "r" : ""}, h.trim())))),
+    el("tbody", {}, rows));
+}
+
+function renderPanel(a) {
+  const R = $("#right"); R.replaceChildren();
+  const now = new Date("2026-11-22T14:00:00+05:30");
+  R.append(sec("Contacts and saved payees", `${a.contacts.length} saved`, table(["Name", "Number / UPI ID", "Added on"],
+    a.contacts.map(c => {
+      const recent = c.upi_id_changed_on && (now - new Date(c.upi_id_changed_on)) / 864e5 <= 30;
+      return el("tr", {"data-id": c.id},
+        el("td", {}, c.name, c.relation ? el("span", {class: "badge blue"}, c.relation) : null,
+          recent ? el("span", {class: "badge"}, "UPI ID changed " + day(c.upi_id_changed_on)) : null),
+        el("td", {class: "num"}, c.phone.replace(/(\d{5})(\d{5})/, "$1-$2"), el("br"), el("span", {class: "small"}, c.upi_id),
+          c.previous_upi_id ? el("div", {class: "small"}, "was " + c.previous_upi_id) : null),
+        el("td", {class: "num"}, day(c.added_on) + " " + c.added_on.slice(0, 4)));
+    }))));
+
+  R.append(sec("Recent payments", "last 3 months", table(["Date", "Payee", "Amount ", "Note"],
+    a.payments.map(p => el("tr", {"data-id": p.id},
+      el("td", {class: "num"}, day(p.date), p.date.startsWith("2026-11-22") ? el("div", {class: "small"}, p.date.slice(11, 16)) : null),
+      el("td", {}, p.payee_name, el("div", {class: "small"}, p.payee_upi)),
+      el("td", {class: "r num"}, inr(p.amount)),
+      el("td", {}, p.note, p.txn_id ? el("span", {class: "badge green"}, "just now") : null)))), true));
+
+  if (a.incoming.length) R.append(sec("Money received", "", table(["Date", "From", "Amount ", "Note"],
+    [...a.incoming].sort((x, y) => y.date.localeCompare(x.date)).map(x => el("tr", {"data-id": x.id},
+      el("td", {class: "num"}, day(x.date), x.date.startsWith("2026-11-22") ? el("div", {class: "small"}, x.date.slice(11, 16)) : null),
+      el("td", {}, x.from_name, el("div", {class: "small"}, x.from_upi)),
+      el("td", {class: "r num"}, inr(x.amount)), el("td", {}, x.note))))));
+
+  const billRows = [
+    ...a.bills.map(b => el("tr", {"data-id": b.id}, el("td", {}, b.biller, el("div", {class: "small"}, b.category)),
+      el("td", {class: "r num"}, inr(b.usual_amount)), el("td", {class: "r num"}, inr(b.current_amount)),
+      el("td", {}, `Due ${day(b.current_due_date)}`, b.paid_this_cycle ? el("span", {class: "badge green"}, "paid") : null))),
+    ...a.subscriptions.map(x => el("tr", {"data-id": x.id}, el("td", {}, x.name, el("div", {class: "small"}, "Subscription")),
+      el("td", {class: "r num"}, inr(x.amount)), el("td", {class: "r num"}, inr(x.amount)),
+      el("td", {}, `Due ${day(x.next_due)}`, x.autopay_mandate ? el("span", {class: "badge"}, "AutoPay") : null))),
+    ...a.offers.map(o => el("tr", {"data-id": o.id}, el("td", {}, o.merchant, el("div", {class: "small"}, o.headline)),
+      el("td", {class: "r num"}, "—"), el("td", {class: "r num"}, inr(o.pay_now)),
+      el("td", {}, `then ${inr(o.then_amount)}/${o.then_frequency === "monthly" ? "month" : o.then_frequency} from ${day(o.then_starts)}`,
+        o.autopay_mandate ? el("span", {class: "badge"}, "AutoPay mandate") : null)))];
+  if (billRows.length) R.append(sec("Bills and subscriptions", "", table(["Biller", "Usual ", "Current ", "Due"], billRows)));
+
+  if (a.orders.length) R.append(sec("Orders", "", table(["Order", "Merchant", "Amount ", "Status"],
+    a.orders.map(o => el("tr", {"data-id": o.id}, el("td", {}, o.order_no, el("div", {class: "small"}, o.item)),
+      el("td", {}, o.merchant, el("div", {class: "small"}, o.merchant_upi)), el("td", {class: "r num"}, inr(o.amount)),
+      el("td", {}, o.status, el("div", {class: "small"}, o.delivery_status)))))));
+
+  R.append(el("div", {class: "sec", "data-id": "balance"}, el("h2", {}, "Balance and daily limit"),
+    el("div", {class: "kv"},
+      el("div", {}, "Balance", el("b", {class: "num"}, inr(a.balance))),
+      el("div", {}, "Paid today", el("b", {class: "num"}, inr(a.paid_today))),
+      el("div", {}, "Pay Check daily cap", el("b", {class: "num"}, inr(a.app_daily_cap))),
+      el("div", {}, "Bank daily limit", el("b", {class: "num"}, inr(a.daily_limit))))));
+}
+
+function highlight(ids, kind) {
+  document.querySelectorAll(".hl-ask,.hl-stop,.hl-pay").forEach(e => e.classList.remove("hl-ask", "hl-stop", "hl-pay"));
+  let first = null;
+  (ids || []).forEach(id => document.querySelectorAll(`[data-id="${CSS.escape(id)}"]`).forEach(e => {
+    void e.offsetWidth; e.classList.add("hl-" + kind); first = first || e;
+  }));
+  if (first) first.scrollIntoView({behavior: "smooth", block: "center"});
+}
+
+function setPaste(on) {
+  PASTE = on; $("#clip").classList.toggle("on", on);
+  $("#input").placeholder = on ? "Paste an SMS, collect request or upi:// link — What am I approving?" : "Send Meera ₹500…";
+}
+
+function push(node) { $("#chat").append(node); $("#chat").scrollTop = $("#chat").scrollHeight; return node; }
+
+async function send(text, opts = {}) {
+  text = (text || "").trim();
+  if (!text || BUSY || !SID) return;
+  BUSY = true; $("#send").disabled = true;
+  const mode = PASTE ? "paste" : "chat";
+  push(el("div", {class: "msg user" + (mode === "paste" ? " paste" : "")}, mode === "paste" ? "📎 " + text : text));
+  $("#input").value = ""; setPaste(false);
+  const wait = push(el("div", {class: "msg agent thinking"}, "Checking the records…"));
+  const r = await api("/api/chat", {session_id: SID, text, mode, quick_reply: !!opts.tap});
+  wait.remove();
+  BUSY = false; $("#send").disabled = false;
+  document.querySelectorAll(".card .approve").forEach(b => { if (!b.dataset.done) { b.disabled = true; b.closest(".card").classList.add("void"); } });
+  if (r.error) { push(el("div", {class: "msg agent err"}, r.error)); return; }
+  if (r.tool_log && r.tool_log.length) push(el("div", {class: "tools"}, r.tool_log.map(t => el("div", {}, t))));
+  const ids = (r.evidence_ids && r.evidence_ids.length) ? r.evidence_ids : r.looked_up_ids;
+  if (r.decision === "pay" && r.card) push(payCard(r.message, r.card));
+  else if (r.decision === "ask") push(askCard(r.message, r.quick_replies, ids));
+  else if (r.decision === "stop") push(stopCard(r.message, ids));
+  else push(el("div", {class: "msg agent" + (r.decision === "error" ? " err" : "")}, r.message));
+  if (r.account) render(r.account);
+  if (r.decision === "ask" || r.decision === "stop") highlight(ids, r.decision);
+  else if (r.decision === "pay") highlight(ids, "pay");
+}
+
+function payCard(message, c) {
+  const pb = c.paid_before;
+  const card = el("div", {class: "card"},
+    el("div", {class: "small", style: "margin-bottom:8px"}, message),
+    el("div", {class: "payee"}, el("div", {class: "av"}, initials(c.payee_name)),
+      el("div", {}, el("b", {}, c.payee_name), el("div", {class: "upi"}, c.payee_upi))),
+    el("div", {class: "amount num"}, c.amount_display),
+    c.note ? el("div", {class: "small"}, "Note: " + c.note) : null,
+    el("div", {class: "small"}, pb.times ? `Paid before: ${pb.times} time${pb.times > 1 ? "s" : ""}, last ${pb.last_amount_display} on ${day(pb.last_date)}`
+      : "Never paid before"),
+    c.warning ? el("div", {class: "warn"}, "⚠️ " + c.warning) : null);
+  const btn = el("button", {class: "approve", onclick: async () => {
+    btn.disabled = true;
+    const r = await api("/api/approve", {session_id: SID, card_id: c.card_id, token: c.token, payee_upi: c.payee_upi, amount_paise: c.amount_paise});
+    if (r.ok) {
+      btn.dataset.done = 1;
+      card.replaceWith(receipt(r.receipt));
+    } else {
+      push(el("div", {class: "msg agent err"}, "Not paid: " + (r.reason || r.error || "approval failed") + "."));
+      card.classList.add("void");
+    }
+    if (r.account) render(r.account);
+  }}, "Approve " + c.amount_display);
+  const cancel = el("button", {class: "cancel", onclick: async () => {
+    btn.disabled = true; card.classList.add("void");
+    await api("/api/cancel", {session_id: SID, card_id: c.card_id});
+    push(el("div", {class: "msg agent"}, "Cancelled. Nothing was paid."));
+  }}, "Cancel");
+  card.append(btn, cancel);
+  return card;
+}
+
+function receipt(rc) {
+  return el("div", {class: "card paid"}, el("div", {class: "label"}, "Paid"),
+    el("div", {class: "payee"}, el("div", {class: "tick"}, "✓"),
+      el("div", {}, el("b", {}, `${rc.amount_display} to ${rc.payee_name}`), el("div", {class: "upi"}, rc.payee_upi))),
+    el("div", {class: "small", style: "margin-top:8px"}, `Transaction ID ${rc.txn_id} · ${rc.time.slice(11, 16)}, ${day(rc.time)}`));
+}
+
+function askCard(message, replies, ids) {
+  const card = el("div", {class: "card ask"}, el("div", {class: "label"}, "Quick check"), el("div", {}, message));
+  if (replies && replies.length) card.append(el("div", {class: "qr"}, replies.map(q => el("button", {onclick: () => {
+    card.querySelectorAll(".qr button").forEach(b => b.disabled = true); send(q, {tap: true});
+  }}, q))));
+  card.append(el("button", {class: "why", onclick: () => highlight(ids, "ask")}, "why?"));
+  return card;
+}
+
+function stopCard(message, ids) {
+  return el("div", {class: "card stop"}, el("div", {class: "label"}, "Blocked · don't pay"), el("div", {}, message),
+    el("div", {class: "small", style: "margin-top:6px"}, "No payment was prepared."),
+    el("button", {class: "why", onclick: () => highlight(ids, "stop")}, "why?"));
+}
+
+$("#send").onclick = () => send($("#input").value);
+$("#input").addEventListener("keydown", e => { if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); send($("#input").value); } });
+$("#clip").onclick = () => setPaste(!PASTE);
+loadPersonas();
+</script>
+</body>
+</html>

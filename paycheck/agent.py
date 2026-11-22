@@ -126,7 +126,7 @@ def _context(s: Session) -> str:
 def _fail(s, text, tool_log, model=None):
     s.history.append({"role": "assistant", "content": text})
     return {"decision": "error", "message": text, "card": None, "quick_replies": [],
-            "evidence_ids": [], "tool_log": tool_log, "model": model}
+            "evidence_ids": [], "looked_up_ids": list(getattr(s, "seen_ids", [])), "tool_log": tool_log, "model": model}
 
 
 def handle(s: Session, text: str, mode: str = "chat", quick_reply: bool = False) -> dict:
@@ -148,6 +148,7 @@ def handle(s: Session, text: str, mode: str = "chat", quick_reply: bool = False)
 
     msgs = [{"role": "system", "content": SYSTEM + "\n\n" + _context(s)}] + s.history[-16:]
     tool_log, cards, failed, model = [], {}, [], None
+    s.seen_ids = []
     for _ in range(MAX_STEPS):
         try:
             reply, model = llm.chat(msgs, TOOL_SPECS)
@@ -161,7 +162,7 @@ def handle(s: Session, text: str, mode: str = "chat", quick_reply: bool = False)
                 msg = clip(content, 400)
                 s.history.append({"role": "assistant", "content": msg})
                 return {"decision": "info", "message": msg, "card": None, "quick_replies": [],
-                        "evidence_ids": [], "tool_log": tool_log, "model": model}
+                        "evidence_ids": [], "looked_up_ids": s.seen_ids, "tool_log": tool_log, "model": model}
             return _fail(s, "Something went wrong on my side. Nothing was paid.", tool_log, model)
         msgs.append({k: v for k, v in reply.items() if k in ("role", "content", "tool_calls", "extra_content")}
                     | {"role": "assistant"})
@@ -179,6 +180,8 @@ def handle(s: Session, text: str, mode: str = "chat", quick_reply: bool = False)
                 res = {"ok": False, "error": f"{name} returned unreadable data"}
             if name in LOOKUPS and not res.get("ok"):
                 failed.append(name)
+            if res.get("ok"):
+                s.seen_ids += [str(i) for i in res.get("ids", []) if str(i) not in s.seen_ids]
             if res.get("card_created"):
                 cards[res["card"]["card_id"]] = res["_ui_token"]
             tool_log.append(_summary(name, args or {}, res))
@@ -218,7 +221,7 @@ def _finish(s, args, cards, failed, tool_log, model):
     s.last_question = message if decision == "ask" else None
     s.history.append({"role": "assistant", "content": f"[{decision}] {message}"})
     return {"decision": decision, "message": message, "card": card, "quick_replies": replies if decision == "ask" else [],
-            "evidence_ids": evidence, "tool_log": tool_log, "model": model}
+            "evidence_ids": evidence, "looked_up_ids": s.seen_ids, "tool_log": tool_log, "model": model}
 
 
 def safety_public(c):

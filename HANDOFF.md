@@ -3,6 +3,12 @@
 Update this with every commit: rewrite **Now**, add one line to the top of **Log**.
 
 ## Now
+- **Latest:** web UI done.
+  - `server.py` (FastAPI) serves `static/index.html` with `/api/session`, `/api/chat`, `/api/approve` and `/api/cancel`.
+  - Layout: phone chat on the left, records on the right, with row highlights from `evidence_ids` (or `looked_up_ids`).
+  - Run with `uvicorn server:app --port 8000`.
+  - Verified with Playwright: Lakshmi's scam SMS is blocked, and a Sri Krishna Stores payment goes through to the receipt.
+  - **Next:** step 4, the tests. Then a public deploy (Render) for the demo, and a full `live_check`.
 - **State:** steps 1–2 done.
   - **Data:** `data/`, built by `scripts/build_data.py`. Edit the script and rerun it; don't hand-edit the JSON.
     - Traps by persona: Priya 1, 2, 5; Sunita 3, 8, 9; Aman 4, 7, 10; Lakshmi 6, 11, 12.
@@ -28,6 +34,7 @@ Update this with every commit: rewrite **Now**, add one line to the top of **Log
 - **Working branch:** `ccr-c57dee27-oogryd`.
 
 ## Log (newest first)
+- 22 Nov · Web UI + FastAPI server; demo flow verified by screenshot.
 - 22 Nov · Agent loop + README for submission. Next: tests, then UI.
 - 22 Nov 09:35 UTC · Gemini key set up on cloud env `wtm_agent`; model IDs recorded; agent loop moved before tests.
 - 22 Nov 09:20 UTC · Step 2: `paycheck/` package — tools, payment gate, amount parsing.
