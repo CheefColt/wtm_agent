@@ -16,7 +16,14 @@ RPM = requests per minute, TPM = tokens per minute, RPD = requests per day.
 | 7 | Gemini 4 Hydrogen | 5 | 250K | 20 | Fallback. |
 | 8 | Gemini 2.5 Flash | 5 | 250K | 20 | Last fallback. |
 
-Exact API model ID strings: copy them from AI Studio into `.env` / config; don't guess them.
+API model IDs, in fallback order (checked against the API's model list on 22 Nov):
+`gemini-3.5-flash-lite`, `gemini-3.1-flash-lite`, `gemini-2.5-flash-lite`, `gemini-3.8-flash`, `gemini-3.6-flash`, `gemini-3-flash-preview`, `gemini-4-hydrogen`, `gemini-2.5-flash`.
+
+## How we call it
+- **Endpoint:** Gemini's OpenAI-compatible API, `https://generativelanguage.googleapis.com/v1beta/openai/chat/completions`, with function calling.
+- **Auth:** `Authorization: Bearer <key>`.
+- **In the cloud session:** the key is a network secret on the `wtm_agent` cloud environment. The proxy injects it, so the code sends the placeholder `proxy-injected`, and the key never sits in the container.
+- **Anywhere else** (e.g. a deploy host): set `GEMINI_API_KEY`.
 
 Peak usage seen on 3.5 Flash Lite over the 28 days: 11 RPM, 48.78K TPM, 145 RPD.
 
