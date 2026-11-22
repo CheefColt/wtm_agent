@@ -48,6 +48,8 @@ class Session:
         self.confirmed = []         # what the user really confirmed (clicked), for memory
         self.fail_tools = {}        # tests only: tool name -> "timeout" | "error" | "garbage"
         self.txn_counter = 0
+        self.history = []           # chat turns sent to the model (no tool dumps)
+        self.last_question = None   # the agent's last 'ask', for recording quick-reply taps
 
     def now(self) -> datetime:
         """The fixed demo clock plus real time elapsed in this session."""
