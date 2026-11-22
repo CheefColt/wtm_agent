@@ -8,6 +8,11 @@ Read these before doing anything:
 5. `context/TRAPS.md`: the traps to plant in persona data, each with a clean twin.
 6. `context/ATTACKS.md`: what other teams will try. Test all of it.
 
+Unbreakable is a build requirement, not a nice-to-have (25 pts plus the Most Unbreakable prize, and other teams will attack us):
+- Turn every item in `context/ATTACKS.md`, and the risky and clean twin of every trap in `context/TRAPS.md`, into automated tests in `tests/test_attacks.py`.
+- Keep the tests passing before each push.
+- A failing attack test blocks the push.
+
 How the user likes to work:
 - Short, plain answers.
 - Plan and agree before coding; no slop or extra features.
