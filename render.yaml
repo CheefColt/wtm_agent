@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: pay-check
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn server:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /api/personas
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.7
+      - key: GEMINI_API_KEY
+        sync: false          # paste it in Render's form; never commit it
+      - key: CHATS_PER_MINUTE_PER_VISITOR
+        value: "10"
+      - key: CHATS_PER_DAY
+        value: "100"

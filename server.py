@@ -1,7 +1,10 @@
 """Pay Check web app.  Run:  uvicorn server:app --port 8000"""
 
+import os
 import secrets
-from collections import OrderedDict
+import threading
+import time
+from collections import OrderedDict, defaultdict, deque
 from pathlib import Path
 
 from fastapi import FastAPI, Request
@@ -15,6 +18,38 @@ app = FastAPI(title="Pay Check")
 SESSIONS: "OrderedDict[str, Session]" = OrderedDict()
 MAX_SESSIONS = 300
 INDEX = Path(__file__).parent / "static" / "index.html"
+
+# Visitor limits, so a public link can't burn the Gemini quota (about 4 model calls per chat).
+PER_MINUTE = int(os.environ.get("CHATS_PER_MINUTE_PER_VISITOR", "10"))
+PER_DAY = int(os.environ.get("CHATS_PER_DAY", "100"))
+_visits = defaultdict(deque)
+_day = {"start": time.time(), "count": 0}
+_rl_lock = threading.Lock()
+
+
+def _visitor(request: Request) -> str:
+    fwd = request.headers.get("x-forwarded-for", "")
+    return fwd.split(",")[0].strip() or (request.client.host if request.client else "?")
+
+
+def _rate_limited(request: Request) -> JSONResponse | None:
+    now = time.time()
+    with _rl_lock:
+        if now - _day["start"] >= 86400:
+            _day.update(start=now, count=0)
+        if _day["count"] >= PER_DAY:
+            return JSONResponse({"error": "The demo has used today's checks. Nothing was paid."}, status_code=429)
+        q = _visits[_visitor(request)]
+        while q and now - q[0] >= 60:
+            q.popleft()
+        if len(q) >= PER_MINUTE:
+            return JSONResponse({"error": "Too many messages. Wait a minute and try again. Nothing was paid."},
+                                status_code=429)
+        q.append(now)
+        _day["count"] += 1
+        if len(_visits) > 5000:
+            _visits.clear()
+    return None
 
 
 @app.exception_handler(Exception)
@@ -81,10 +116,13 @@ class Chat(BaseModel):
 
 
 @app.post("/api/chat")
-def chat(body: Chat):
+def chat(body: Chat, request: Request):
     s = _get(body.session_id)
     if not s:
         return _missing()
+    limited = _rate_limited(request)
+    if limited:
+        return limited
     r = agent.handle(s, body.text, mode="paste" if body.mode == "paste" else "chat", quick_reply=body.quick_reply)
     return {**r, "account": _account(s)}
 

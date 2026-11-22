@@ -3,6 +3,10 @@
 Update this with every commit: rewrite **Now**, add one line to the top of **Log**.
 
 ## Now
+- **Deploy ready:** `render.yaml` (free web service, uvicorn on `$PORT`, needs `GEMINI_API_KEY` set in Render).
+  - Per-visitor chat limit is 10/min, plus a 100/day total cap, in `server.py`.
+  - The user deploys from their phone via Render → New → Blueprint.
+  - The free tier sleeps after 15 min idle; open the link a minute before the demo.
 - **Latest:** web UI done.
   - `server.py` (FastAPI) serves `static/index.html` with `/api/session`, `/api/chat`, `/api/approve` and `/api/cancel`.
   - Layout: phone chat on the left, records on the right, with row highlights from `evidence_ids` (or `looked_up_ids`).
@@ -34,6 +38,7 @@ Update this with every commit: rewrite **Now**, add one line to the top of **Log
 - **Working branch:** `ccr-c57dee27-oogryd`.
 
 ## Log (newest first)
+- 22 Nov · Render blueprint + visitor rate limits; pinned requirements.
 - 22 Nov · Web UI + FastAPI server; demo flow verified by screenshot.
 - 22 Nov · Agent loop + README for submission. Next: tests, then UI.
 - 22 Nov 09:35 UTC · Gemini key set up on cloud env `wtm_agent`; model IDs recorded; agent loop moved before tests.

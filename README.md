@@ -27,6 +27,16 @@ python scripts/chat.py lakshmi --paste "You have received a request to RECEIVE R
 python scripts/live_check.py 1 6 7   # trap twins against real Gemini
 ```
 
+## Deploy (Render, free)
+1. On render.com, sign in with GitHub, then tap New → Blueprint and pick this repo. `render.yaml` sets everything up.
+2. Paste your Gemini key into the `GEMINI_API_KEY` field.
+
+Visitor limits stop a public link from burning the Gemini quota:
+- 10 chats a minute for each visitor;
+- 100 chats a day in total.
+
+Change them with `CHATS_PER_MINUTE_PER_VISITOR` and `CHATS_PER_DAY`.
+
 ## Status
 Done: data, tools, the safety gate, the agent loop and the web UI.
 Not done yet: the attack test suite. See `HANDOFF.md`.
